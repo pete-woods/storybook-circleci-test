@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  run:
+    docker:
+      - image: cimg/node:current
+    steps:
+      - run: yarn install
+      - run: yarn build
+
+workflows:
+  run:
+    jobs:
+      - run

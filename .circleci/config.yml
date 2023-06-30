@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run:
     docker:
-      - image: cimg/node:current
+      - image: cimg/node@sha256:393732be1caed074fdeeb837a6b2b09fe8c99a35290a86de775f4e6d03b79238
     steps:
       - checkout
       - run: npm install

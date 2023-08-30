@@ -2,6 +2,7 @@ version: 2.1
 
 jobs:
   run:
+    parllelism: 2
     docker:
       - image: cimg/node@sha256:393732be1caed074fdeeb837a6b2b09fe8c99a35290a86de775f4e6d03b79238
     steps:
@@ -11,7 +12,14 @@ jobs:
       - store_artifacts:
           path: storybook-static
 
+  test:
+    docker:
+      - image: alpine
+    steps:
+      - run: echo test
+
 workflows:
   run:
     jobs:
       - run
+      - test
